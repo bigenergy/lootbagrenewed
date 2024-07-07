@@ -12,5 +12,5 @@ public class ItemInit {
 	
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, LootBagMod.modid);
 	
-	public static final RegistryObject<Item> LOOTBAG = ITEMS.register("lootbag", () -> new LootBagItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> LOOTBAG = ITEMS.register("lootbag", () -> new LootBagItem(new Item.Properties()));
 }

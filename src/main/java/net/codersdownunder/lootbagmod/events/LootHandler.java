@@ -66,7 +66,7 @@ public final class LootHandler {
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public static void onMobDrops(LivingDropsEvent event) {
 		
-		if (!event.getEntity().level.isClientSide) {
+		if (!event.getEntity().level().isClientSide) {
 
 		//System.out.print("testing");
 		String entityName = Objects.requireNonNull(ForgeRegistries.ENTITY_TYPES.getKey(event.getEntity().getType())).toString();
@@ -81,12 +81,12 @@ public final class LootHandler {
 			if (event.getLootingLevel() != 0) {
 			if (dropchance / event.getLootingLevel() / 1 <= testchance) {
 				//LootBagMod.LOGGER.info("Bag Dropped");
-				event.getDrops().add(new ItemEntity(event.getEntity().level, event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
+				event.getDrops().add(new ItemEntity(event.getEntity().level(), event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
 			}
 			} else {
 				if (dropchance <= testchance) {
 					
-					event.getDrops().add(new ItemEntity(event.getEntity().level, event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
+					event.getDrops().add(new ItemEntity(event.getEntity().level(), event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
 					//LootBagMod.LOGGER.info("Bag Dropped");
 				}
 			}
@@ -109,12 +109,12 @@ public final class LootHandler {
 			if (event.getLootingLevel() != 0) {
 				if (dropchance / event.getLootingLevel() / 1 <= testchance) {
 					//LootBagMod.LOGGER.info("Bag Dropped");
-					event.getDrops().add(new ItemEntity(event.getEntity().level, event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
+					event.getDrops().add(new ItemEntity(event.getEntity().level(), event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
 				}
 				} else {
 					if (dropchance <= testchance) {
 						
-						event.getDrops().add(new ItemEntity(event.getEntity().level, event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
+						event.getDrops().add(new ItemEntity(event.getEntity().level(), event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
 						//LootBagMod.LOGGER.info("Bag Dropped");
 					}
 				}
@@ -139,12 +139,12 @@ public final class LootHandler {
 			if (event.getLootingLevel() != 0) {
 			if (dropchance / event.getLootingLevel() / 1 <= testchance) {
 				//LootBagMod.LOGGER.info("Bag Dropped");
-				event.getDrops().add(new ItemEntity(event.getEntity().level, event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
+				event.getDrops().add(new ItemEntity(event.getEntity().level(), event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
 			}
 			} else {
 				if (dropchance <= testchance) {
 					
-					event.getDrops().add(new ItemEntity(event.getEntity().level, event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
+					event.getDrops().add(new ItemEntity(event.getEntity().level(), event.getEntity().xOld, event.getEntity().yOld, event.getEntity().zOld, new ItemStack(ItemInit.LOOTBAG.get(), 1)));
 					//LootBagMod.LOGGER.info("Bag Dropped");
 				}
 			}

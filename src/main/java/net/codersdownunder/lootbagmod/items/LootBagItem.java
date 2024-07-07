@@ -187,7 +187,7 @@ public class LootBagItem extends Item {
 
 		if (playerIn.getInventory().contains(new ItemStack(this)) && !playerIn.isCreative()) {
 
-			if (playerIn.getItemInHand(handIn).sameItem(new ItemStack(this))) {
+			if (playerIn.getItemInHand(handIn).equals(new ItemStack(this))) {
 				ItemStack IronIngotFound = playerIn.getItemInHand(handIn);
 				int stacksize = IronIngotFound.getCount();
 				IronIngotFound.setCount(stacksize - 1);
